@@ -5,17 +5,18 @@ const TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 const Map = () => {
   const [viewport, setViewPort] = useState({
-    width: 400,
-    height: 400,
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 8
+    width: '100vw',
+    height: '100vh',
+    latitude: 42.430472,
+    longitude: -123.334102,
+    zoom: 16
   })
 
   return (
     <ReactMapGL
-      mapboxApiAccessToken={TOKEN}
       {...viewport}
+      mapboxApiAccessToken={TOKEN}
+      mapStyle="mapbox://styles/mapbox/outdoors-v11"
       onViewportChange={viewport => setViewPort({ ...viewport })}
     />
   );
